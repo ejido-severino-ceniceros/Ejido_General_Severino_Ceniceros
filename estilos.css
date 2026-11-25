@@ -1949,3 +1949,61 @@ footer a { overflow-wrap: anywhere; }
     .hero-contenido { padding-left: 12px; padding-right: 12px; }
     .museo-card { flex-basis: min(270px, 84vw); min-width: min(270px, 84vw); }
 }
+
+/* MENÚ MÓVIL SIEMPRE DISPONIBLE */
+@media (max-width: 900px) {
+
+    .menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 48px;
+        height: 48px;
+        background: var(--terracota-ejido);
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+        z-index: 3001;
+    }
+
+    .header:has(.menu-fijo) .menu-btn {
+        position: fixed;
+        top: 12px;
+        right: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,.25);
+    }
+
+    .menu,
+    .menu.menu-fijo {
+        background: var(--marfil);
+        z-index: 3000;
+        padding: 12px;
+        max-height: 75vh;
+        overflow-y: auto;
+    }
+
+    .menu.menu-fijo {
+        position: fixed;
+        top: 72px;
+        left: auto;
+        right: 15px;
+        width: min(300px, calc(100% - 30px));
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,.25);
+    }
+
+    .menu a {
+        min-height: 48px;
+        font-size: 15px;
+        color: var(--texto-tierra);
+    }
+
+    .menu.activo {
+        display: flex;
+    }
+
+    section[id] {
+        scroll-margin-top: 75px;
+    }
+}
